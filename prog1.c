@@ -23,11 +23,21 @@ return 1;
 
 }
 
-printf("Writing to pipe Message 1 is %s\n", writemessages[0]); write(pipefds[1], writemessages[0], sizeof(writemessages[0]));
+printf("Writing to pipe Message 1 is %s\n", writemessages[0]);
 
-read(pipefds[0], readmessage, sizeof(readmessage)); printf("Reading from pipe - Message 1 is %s\n", readmessage);
+write(pipefds[1], writemessages[0], sizeof(writemessages[0]));
 
-printf("Writing to pipe Message 2 is %s\n", writemessages[1]); - write(pipefds[1], writemessages[1], sizeof(writemessages[1])); read(pipefds[0], readmessage, sizeof(readmessage));
+read(pipefds[0], readmessage, sizeof(readmessage)); 
 
-printf("Reading from pipe - Message 2 is %s\n", readmessage); return 0;
+printf("Reading from pipe - Message 1 is %s\n", readmessage);
+
+printf("Writing to pipe Message 2 is %s\n", writemessages[1]); 
+
+write(pipefds[1], writemessages[1], sizeof(writemessages[1]));
+
+read(pipefds[0], readmessage, sizeof(readmessage));
+
+printf("Reading from pipe - Message 2 is %s\n", readmessage);
+
+ return 0;
 }
