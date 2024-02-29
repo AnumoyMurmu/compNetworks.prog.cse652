@@ -1,6 +1,7 @@
 # compNetworks.prog.cse652
 
-The c extension is being used.pipeline concept is generally coded throughout program.
+The c extension is being used.
+Pipeline concept is generally coded throughout program.
 
 For ssh secure shell, make directory (mkdir) and make a c folder inside it.
 
